@@ -32,5 +32,5 @@ Simple keyboard shortcuts to use
 
 ## Authors
 
-- [Ejaz Bawawasa](https://zaje.me/)
+- [Ejaz Bawasa](https://zaje.me/)
 
