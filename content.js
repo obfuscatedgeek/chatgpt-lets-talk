@@ -1,25 +1,24 @@
 // global elements on the page
 const textarea = document.querySelectorAll("textarea")[0];
 const submitButton = document.querySelectorAll("textarea")[0].nextSibling;
+let shouldTalk = false;
 
 // observation block: check the disabled state of the submit button to decide when to start speaking after the answer has been generated
 const observer = new MutationObserver(mutations => {
     mutations.forEach(mutation => {
-      if (mutation.attributeName === 'disabled' && !mutation.target.disabled) {
-        speak();
+      if (mutation.attributeName === 'disabled') {
+        if(!mutation.target.disabled) {
+            speak();
+        }
       }
     });
 });
 observer.observe(submitButton, {attributes: true});
 
-// speech recognition block
-let recongizing;
+// speech recognition block - listening
+let recognizing;
 const recognization = new webkitSpeechRecognition();
 recognization.continuous = true;
-
-window.onbeforeunload = () => {
-    voice.cancel();
-}        
 
 recognization.onresult = (event) => {
     for (let i = event.resultIndex; i < event.results.length; i++) {
@@ -28,6 +27,7 @@ recognization.onresult = (event) => {
             textarea.innerText = transcript
             textarea.value = transcript;
 
+            shouldTalk = true;
             toggleListening();
 
             submitButton.click()
@@ -36,37 +36,58 @@ recognization.onresult = (event) => {
 }
 
 const reset = () => {
-    recongizing = false;        
+    recognizing = false;        
 }
 
 const toggleListening = () => {
-    if (recongizing) {
+    if (recognizing) {
         recognization.stop();
         reset();
         return;
     }
 
     recognization.start();
-    recongizing = true;
+    recognizing = true;
 }
 
 // voice blocks
-let voice;
-if("speechSynthesis" in window || speechSynthesis){ 
-    voice = window.speechSynthesis || speechSynthesis;   
-} else {
-    alert("Sorry speech is not available!");
-}    
+let synth;
 
-// identify the markdown block and utter it
+window.onload = () => {
+    if("speechSynthesis" in window || speechSynthesis){ 
+        synth = window.speechSynthesis || speechSynthesis;   
+    }
+}
+
 const speak = () => {
-    if (!voice) {
-        return;
+    let text = "Ooops! I did not find any answer to speak out loud.";
+    
+    if (!document.querySelectorAll('.markdown').length) {
+        console.log(">> Please ask a question first to hear me speak!");
+    } else {
+        text = Array.from(document.querySelectorAll('.markdown')).pop().textContent;
     }
 
-    var text = Array.from(document.querySelectorAll('.markdown')).pop().textContent 
-    var utter = new SpeechSynthesisUtterance(text);
-    voice.speak(utter); 
+    // we should talk only if initiated through the keyboard shortcut
+    if (!shouldTalk){
+        return;
+    }
+    
+    let utterThis = new SpeechSynthesisUtterance(text);
+
+    utterThis.pitch = 0.98;
+    utterThis.onend = function (event) {
+        shouldTalk = false;
+        console.log("SpeechSynthesisUtterance ends");
+    };
+  
+    utterThis.onerror = function (event) {
+        shouldTalk = false;
+        console.error("SpeechSynthesisUtterance onerror", event);
+    };
+
+    synth.cancel();
+    synth.speak(utterThis); 
 }
 
 // listen to messages from background and act on them
@@ -76,7 +97,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
             toggleListening();
             break;
         case 'pause':
-            voice.cancel();
+            synth.cancel();
             break;
         case 'talk':
             speak();
