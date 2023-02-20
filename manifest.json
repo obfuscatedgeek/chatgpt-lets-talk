@@ -1,7 +1,7 @@
 {
     "name": "ChatGPT - Let's talk",
     "version": "1.0.1",
-    "description": "Talk to and listen from ChatGPT",
+    "description": "Talk to and hear from ChatGPT",
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"
