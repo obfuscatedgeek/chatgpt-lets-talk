@@ -1,0 +1,11 @@
+{
+  "name": "chatgpt-lets-talk",
+  "version": "1.0.0",
+  "description": "ChatGPT - Let's talk",
+  "keywords": ["ChatGPT"],
+  "author": "Ejaz Bawasa",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.217"
+  }
+}

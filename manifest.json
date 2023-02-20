@@ -1,0 +1,49 @@
+{
+    "name": "ChatGPT - Let's talk",
+    "version": "1.0.0",
+    "description": "Talk to and listen from ChatGPT",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://chat.openai.com/chat?",
+                "https://chat.openai.com/chat*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ],
+    "action": {
+        "default_title": "ChatGPT - Lets talk",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/assets/icon-16x16.png",
+            "24": "/assets/icon-32x32.png",
+            "32": "/assets/icon-32x32.png",
+            "48": "/assets/icon-48x48.png",
+            "128": "/assets/icon-120x120.png"
+        }
+    },
+    "commands": {
+        "listen": {
+            "suggested_key": "Alt+Shift+F",
+            "description": "Listen"
+        },
+        "talk": {
+            "suggested_key": "Alt+Shift+J",
+            "description": "Talk"
+        },
+        "pause": {
+            "suggested_key": "Alt+Shift+P",
+            "description": "Pause"
+        }
+    }
+}
