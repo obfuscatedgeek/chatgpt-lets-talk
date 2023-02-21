@@ -6,7 +6,7 @@ A chrome extension that adds the ability to voice chat with ChatGPT using a few 
 &nbsp;
 &nbsp;
 
-Available on the web store at: ttps://chrome.google.com/webstore/detail/chatgpt-lets-talk/ldkeljfcpadfpkfdloofmhamhkgdcpbo?hl=en&authuser=0
+Available on the web store at: https://chrome.google.com/webstore/detail/chatgpt-lets-talk/ldkeljfcpadfpkfdloofmhamhkgdcpbo?hl=en&authuser=0
 
 &nbsp;
 &nbsp;
