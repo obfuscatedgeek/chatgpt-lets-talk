@@ -5,6 +5,8 @@ A chrome extension that uses browsers `webkitSpeechRecognition` and `speechSynth
 
 Written in native Javascript, does not use any external libraries or APIs other than the ones already available in the browser.
 
+#### Its minimalistic UI, almost none and works purely on keyboard shortcuts.
+
 
 ## Features
 
