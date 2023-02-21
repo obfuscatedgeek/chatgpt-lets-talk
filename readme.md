@@ -6,6 +6,11 @@ A chrome extension that adds the ability to voice chat with ChatGPT using a few 
 &nbsp;
 &nbsp;
 
+Available on the web store at: ttps://chrome.google.com/webstore/detail/chatgpt-lets-talk/ldkeljfcpadfpkfdloofmhamhkgdcpbo?hl=en&authuser=0
+
+&nbsp;
+&nbsp;
+
 ## Ask questions using your microphone
 To voice chat and ask ChatGPT questions using your microphone, press the following combination of keys simultaneously:
 
@@ -55,7 +60,11 @@ If pressed while the answer is being read out loud, the reading will stop.
 &nbsp;
 
 ## Installation
-Currently waiting on Chrome Web Store for approval. In the meantime, you can use the extension by following these steps:
+Chrome web store approved, the extension can be downloaded from: https://chrome.google.com/webstore/detail/chatgpt-lets-talk/ldkeljfcpadfpkfdloofmhamhkgdcpbo?hl=en&authuser=0
+
+
+To manually install the extension from here follow these steps:
+
 1. Clone the repo or download the zip and unzip the files.
 
 2. Go to the "Chrome extensions" tab
