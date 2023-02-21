@@ -21,13 +21,20 @@ Windows | Mac | Description
 ### Installation
 Currently waiting for Chrome Web Store for approval, in the meantime you use the extension by
 1. Clone the repo or download the zip and unzip the files
+
 2. Go to Chrome extensions tab
+
 ![Step 1](/images/install-1.png)
+
 3. Enable developer mode
+
 ![Step 2](/images/install-2.png)
-![Step 4](/images/install-4.png)
+
+![Step 3](/images/install-4.png)
+
 4. Click on "Load unpacked" and point to the folder. Enjoy!
-![Step 3](/images/install-3.png)
+
+![Step 4](/images/install-5.png)
 
 
 ### Cannot hear the answer
@@ -38,12 +45,15 @@ Sometimes with the site sound permission, you might not hear the voice automatic
 ![Step 1](/images/0.png)
 
 2. Click on the site settings
+
 ![Step 2](/images/1.png)
 
 3. Go to Sound settings and change it from "Automatic (default)" 
+
 ![Step 2](/images/2.png)
 
 4. to "Allow"
+
 ![Step 3](/images//3.png)
 
 ### Microphone access
