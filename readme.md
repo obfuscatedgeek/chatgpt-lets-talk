@@ -1,12 +1,12 @@
 
 # ChatGPT - Let's talk
 
-A chrome extension  that adds the ability to voice with the ChatGPT using few keyboard shortcuts.
+A chrome extension  that adds the ability to voice chat with the ChatGPT using few keyboard shortcuts.
 
 &nbsp;
 &nbsp;
 
-### Ask questions using your microphone
+## Ask questions using your microphone
 To voice chat and ask questions to ChatGPT using your microphone, press the following combination of keys simultaneously
 
 ### **Windows**: `Alt + Shift + F`
@@ -19,8 +19,8 @@ Once pressed the keys the extension is actively listening so just ask your quest
 &nbsp;
 
 
-### Hear ChatGPT repeat the last answer
-To hear the last answer, press the following combination of keys simultaneously
+## Hear ChatGPT repeat the last answer
+Although the extension will read the answer out loud when finished generating, you can make it read the last answer out loud, to do so press the following combination of keys simultaneously
 
 ### **Windows**: `Alt + Shift + J`
 
@@ -32,7 +32,7 @@ The last answer from ChatGPT will be read out loud.
 &nbsp;
 &nbsp;
 
-### Stop the voice while its reading the answer.
+## Stop the voice while its reading the answer.
 To stop the voice while its reading the answer out loud, press the following combination of keys simultaneously
 
 ### **Windows**: `Alt + Shift + P`
@@ -55,7 +55,7 @@ To be pressed when the answer is being read out loud, it will stop the reading.
 &nbsp;
 
 ## Installation
-Currently waiting for Chrome Web Store for approval, in the meantime you use the extension by
+Currently waiting for Chrome Web Store for approval, in the meantime you can use the extension by following these steps:
 1. Clone the repo or download the zip and unzip the files
 
 2. Go to Chrome extensions tab
