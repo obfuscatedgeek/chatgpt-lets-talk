@@ -1,26 +1,60 @@
 
 # ChatGPT - Let's talk
 
-A chrome extension that uses browsers `webkitSpeechRecognition` and `speechSynthesis` APIs to talk to and hear from ChatGPT.
+A chrome extension  that adds the ability to voice with the ChatGPT using few keyboard shortcuts.
 
-Written in native Javascript, does not use any external libraries or APIs other than the ones already available in the browser.
+&nbsp;
+&nbsp;
 
-#### Its minimalistic UI, almost none and works purely on keyboard shortcuts.
+### Ask questions using your microphone
+To voice chat and ask questions to ChatGPT using your microphone, press the following combination of keys simultaneously
+
+### **Windows**: `Alt + Shift + F`
+
+### **Mac**: `Option + Shift + F`
+
+Once pressed the keys the extension is actively listening so just ask your questions using your voice, the extension will listen and submit your question. Answer will be read out loud automatically after it has been generated.
+
+&nbsp;
+&nbsp;
+
+
+### Hear ChatGPT repeat the last answer
+To hear the last answer, press the following combination of keys simultaneously
+
+### **Window**: `Alt + Shift + J`
+
+### **Mac**: `Option + Shift + J`
+
+
+The last answer from ChatGPT will be read out loud.
+
+&nbsp;
+&nbsp;
+
+### Stop the voice while its reading the answer.
+To stop the voice while its reading the answer out loud, press the following combination of keys simultaneously
+
+### **Window**: `Alt + Shift + P`
+
+### **Mac**: `Option + Shift + P`
+
+
+To be pressed when the answer is being read out loud, it will stop the reading.
+
+&nbsp;
+&nbsp;
 
 
 ## Features
+- ### Uses in-built browser APIs to hear the questions and read the answer out loud. `webkitSpeechRecognition` and `speechSynthesis` APIs namely.
+- ### Written in native Javascript, does not use any external libraries or APIs other than the ones already available in the browser.
+- ### Almost no UI, just press the keyboard shortcuts and you are ready to go
 
-Simple keyboard shortcuts to use
+&nbsp;
+&nbsp;
 
-Windows | Mac | Description
-:-----:|:-----:|---
-**Alt + Shift + F** | **Option + Shift + F** | To start talking to ChatGPT (will populate the question and submit it at the end of speech)
-**Alt + Shift + J** | **Option + Shift + J** | To hear ChatGPT repeat the last answer. It will start speaking automatically (permission dependent see [section](#cannot-hear-the-answer)) at the end of answer generation 
-**Alt + Shift + P** | **Option + Shift + P** | To stop ChatGPT from talking.
-
-## Troubleshooting
-
-### Installation
+## Installation
 Currently waiting for Chrome Web Store for approval, in the meantime you use the extension by
 1. Clone the repo or download the zip and unzip the files
 
@@ -39,6 +73,7 @@ Currently waiting for Chrome Web Store for approval, in the meantime you use the
 ![Step 4](/images/install-5.png)
 
 
+## Troubleshooting
 ### Cannot hear the answer
 Sometimes with the site sound permission, you might not hear the voice automatically at the end of answer generation. In order to fix this, you need to tell Chrome to allow sound from the ChatGPT site. Following is the process to enable it
 
