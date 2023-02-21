@@ -22,7 +22,7 @@ Once pressed the keys the extension is actively listening so just ask your quest
 ### Hear ChatGPT repeat the last answer
 To hear the last answer, press the following combination of keys simultaneously
 
-### **Window**: `Alt + Shift + J`
+### **Windows**: `Alt + Shift + J`
 
 ### **Mac**: `Option + Shift + J`
 
@@ -35,7 +35,7 @@ The last answer from ChatGPT will be read out loud.
 ### Stop the voice while its reading the answer.
 To stop the voice while its reading the answer out loud, press the following combination of keys simultaneously
 
-### **Window**: `Alt + Shift + P`
+### **Windows**: `Alt + Shift + P`
 
 ### **Mac**: `Option + Shift + P`
 
