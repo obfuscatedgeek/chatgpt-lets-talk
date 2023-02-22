@@ -8,67 +8,129 @@
     <title>ChatGPT - Lets talk</title>
 </head>
 <title>Grid Example</title>
-<style>
-    body {
-        background-color: #c6d500;
-        min-width: 700px;
-        font-size: 16px;
+<style type="text/css">
+    body,
+    div {
+        margin: 0;
+        width: 800px;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        font-family: Blanco, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    }
+
+    .header {
+        background-color: aliceblue;
+        padding: 10px;
+    }
+
+    .description {
+        font-size: 14px;
+        padding: 0 0 2px 0;
+        /* padding-bottom: 1px; */
+    }
+
+    h3 {
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .key {
+        padding: 3px 8px;
+        font-weight: 500;
+        margin: 3px;
+        border-radius: 3px;
+        box-shadow: 3px 2px 2px #CDCDCD;
+        border: 1px solid #333;
     }
 
     table {
-        border-collapse:collapse;
-        /* background-color: #EFEFEF; */
+        border-collapse: separate;
+        /* border-spacing: 10px; */
+        margin: 0;
+        font-size: 14px;
+        padding: 0;
     }
 
     th {
-        background-color: #FFF;;
+        background-color: #4287f5;
+        color: white;
     }
 
-
+    th,
     td {
-        text-align: center; 
-        vertical-align: middle;
-        border-bottom: 1px solid #333;
+        text-align: center;
+        padding: 10px 5px;
+        border-bottom: 1px solid #DEDEDE;
+        ;
     }
 
+    a {
+        color: #333;
+    }
 
+    a:hover {
+        color: blue;
+    }
+
+    .footer {
+        background-color: aliceblue;
+        border-bottom: 1px solid #333;
+        font-size: 12px;
+    }
 </style>
 </head>
 
 <body>
-    <h2>Chat GPT - Let's Talk</h2>
-    <h4>Keyboard shortcuts</h4>
-    <table width="100%" border="0">
-        <tr>
-            <th>Windows</td>
-            <th>Mac</td>
-            <th>Description</td>
-        </tr>
-        <tr>
-            <td><b>Alt + Shift + F</b></td>
-            <td><b>Option + Shift + F</b></td>
-            <td style="text-align:left">Talk / Ask a question to Chat GPT</td>
-        </tr>
-        <tr>
-            <td><b>Alt + Shift + J</b></td>
-            <td><b>Option + Shift + J</b></td>
-            <td style="text-align:left">Listen to Chat GPT repeat the last answer</td>
-        </tr>
-        <tr>
-            <td><b>Alt + Shift + P</b></td>
-            <td><b>Option + Shift + P</b></td>
-            <td style="text-align:left">Stop ChatGPT from talking</td>
-        </tr>
-    </table>
+    <div class="header">
+        <h3>ChatGPT - Let's talk</h3>
+        <p class="description">Adds keyboard shortcuts to <a href="https://chat.openai.com/chat" target="_blank">ChatGPT
+                site</a> which allows you to talk to and hear AI speak in the site. </p><p class="description">Currently 3 actions are available, press
+            the following combination of keys to perform the respective action.</p>
+    </div>
 
-    <hr />
-    <table width="100%" border="0">
-        <tr>
-            <td style="text-align:left"><a href="https://github.com/obfuscatedgeek/chatgpt-lets-talk">ChatGPT - Let's talk</a></td>
-            <td style="text-align:right"><a href="https://zaje.me/">Ejaz Bawasa</a></td>
-        </tr>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th width="30%">Window</th>
+                <th width="30%">Mac</th>
+                <th width="40%">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span></td>
+                <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span>
+                </td>
+                <td><b>Talk : &nbsp;</b> The extension is ready & actively
+                    listening, ask your question using
+                    your voice / microphone.</td>
+            </tr>
+            <tr>
+                <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span></td>
+                <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span>
+                </td>
+                <td><b>Hear : &nbsp;</b>Although the extension will read the answer out loud once it's finished
+                    generating it, by pressing these keys, the last answer will be read again.</td>
+            </tr>
+            <tr>
+                <td><span class="key">Alt</span>+<span class="key">&#8679; Shift</span>+<span class="key">P</span></td>
+                <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">P</span>
+                </td>
+                <td><b>Stop : &nbsp;</b>If pressed while the answer is being read, the extension will stop reading.</td>
+            </tr>
+            <tr class="footer">
+                <td style="text-align: start;"><a target="_blank"
+                        href="https://github.com/obfuscatedgeek/chatgpt-lets-talk#cannot-hear-the-answer">ChatGPT -
+                        Let's talk - homepage</a></td>
+                <td></td>
+                <td style="text-align: end;"><a target="_blank" href="https://zaje.me/">Ejaz Bawasa</a></td>
+            </tr>
+        </tbody>
     </table>
-    
 </body>
 
 </html>

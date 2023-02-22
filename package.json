@@ -7,5 +7,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/chrome": "^0.0.217"
+  },
+  "scripts": {
+    "pack": "rm -f build.zip && zip -r build.zip . -x '*.git*' -x '.DS_Store' -x */node_modules/*"
   }
 }
