@@ -9,8 +9,7 @@
 </head>
 <title>Grid Example</title>
 <style type="text/css">
-    body,
-    div {
+    body {
         margin: 0;
         width: 800px;
         padding: 0;
@@ -23,12 +22,13 @@
 
     .header {
         background-color: aliceblue;
-        padding: 10px;
+        padding-bottom: 2px;
+        /* padding: 10px; */
     }
 
     .description {
         font-size: 14px;
-        padding: 0 0 2px 0;
+        padding: 5px 0 0 10px;
         /* padding-bottom: 1px; */
     }
 
@@ -36,6 +36,18 @@
         font-size: 24px;
         padding: 0;
         margin: 0;
+    }
+
+    input {
+        font-size: 16px;
+        width: 60%;
+        padding: 5px;
+    }
+
+    h4 {
+        margin: 0;
+        padding: 5px 0 5px 15px;
+        text-decoration: underline;
     }
 
     .key {
@@ -63,7 +75,7 @@
     th,
     td {
         text-align: center;
-        padding: 10px 5px;
+        padding: 5px 0;
         border-bottom: 1px solid #DEDEDE;
         ;
     }
@@ -81,17 +93,52 @@
         border-bottom: 1px solid #333;
         font-size: 12px;
     }
+
+    .headerTitle {
+        padding: 10px 0 0 10px;
+    }
+
+    select {
+        width: 95%;
+        margin: 0 5px;
+        border-radius: 4px;
+    }
+    option {
+        font-size: 14px;
+        padding: 5px;
+    }
 </style>
 </head>
 
 <body>
     <div class="header">
-        <h3>ChatGPT - Let's talk</h3>
-        <p class="description">Adds keyboard shortcuts to <a href="https://chat.openai.com/chat" target="_blank">ChatGPT
-                site</a> which allows you to talk to and hear AI speak in the site. </p><p class="description">Currently 3 actions are available, press
-            the following combination of keys to perform the respective action.</p>
+        <h3 class="headerTitle">ChatGPT - Let's talk</h3>
+        <p class="description">Adds keyboard shortcuts to <a href="https://chat.openai.com/chat" target="_blank">ChatGPT site</a> which allows you to talk to and hear AI speak in the site. </p>
+        <p class="description">Currently 3 actions are available, press the following combination of keys to perform the respective action.</p>
     </div>
+    <h4>Change voices</h4>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Vocies</th>
+                <th>Pitch</th>
+                <th>Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>
+                <select size="3" id="voices"></select>
+            </td>
+            <td>
+                <input id="pitch" type="number" max="2" min="0.1", step="0.1" value="1">
+            </td>
+            <td>
+                <input id="rate" type="number" max="10" min="0.1", step="0.1" value="1">
+            </td>
+        </tbody>
+    </table>
 
+    <h4>Keyboard shortcuts</h4>
     <table width="100%">
         <thead>
             <tr>
@@ -132,5 +179,6 @@
         </tbody>
     </table>
 </body>
+<script type="text/javascript" src="popup.js"></script>
 
 </html>
