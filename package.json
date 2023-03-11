@@ -2,13 +2,17 @@
   "name": "chatgpt-lets-talk",
   "version": "1.0.0",
   "description": "ChatGPT - Let's talk",
-  "keywords": ["ChatGPT"],
+  "keywords": [
+    "ChatGPT"
+  ],
   "author": "Ejaz Bawasa",
   "license": "ISC",
   "devDependencies": {
-    "@types/chrome": "^0.0.217"
+    "@types/chrome": "^0.0.217",
+    "eslint": "^8.35.0"
   },
   "scripts": {
-    "pack": "rm -f build.zip && zip -r build.zip . -x '*.git*' -x '.DS_Store' -x */node_modules/* -x '.DS_Store'"
+    "pack": "rm -f build.zip && zip -r build.zip . -x '*.git*' -x '.DS_Store' -x */node_modules/* -x '.DS_Store'",
+    "lint": "eslint ./*.js"
   }
 }
