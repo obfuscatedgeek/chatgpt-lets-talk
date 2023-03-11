@@ -3,8 +3,6 @@
 
 A chrome extension that adds the ability to voice chat with ChatGPT using a few keyboard shortcuts.
 
-![ChatGPT - Let's talk](./images/popup-screenshot-voice-added.png)
-
 &nbsp;
 &nbsp;
 
@@ -12,6 +10,8 @@ Available on the web store at: https://chrome.google.com/webstore/detail/chatgpt
 
 &nbsp;
 &nbsp;
+
+![ChatGPT - Let's talk](./images/popup-screenshot-voice-added.png)
 
 ## Ask questions using your microphone
 To voice chat and ask ChatGPT questions using your microphone, press the following combination of keys simultaneously:
@@ -107,7 +107,7 @@ Sometimes, due to site sound permission, you might not hear the voice automatica
 
 ### Microphone access
 
-The first time pressing the keyboard shortcut "Alt + Shift + F" on Windows and "Option + Shift + F" on OSX, Chrome will show a pop-up asking for microphone access. Click "Allow" to use it.
+The first time pressing the keyboard shortcut `Alt + Shift + F` on Windows and `Option + Shift + F` on OSX, Chrome will show a pop-up asking for microphone access. Click "Allow" to use it.
 ![Microphone access](/images/install-mic-access.png)
 
 
