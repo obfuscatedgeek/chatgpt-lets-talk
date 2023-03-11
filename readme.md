@@ -3,6 +3,8 @@
 
 A chrome extension that adds the ability to voice chat with ChatGPT using a few keyboard shortcuts.
 
+![ChatGPT - Let's talk](./images/popup-screenshot-voice-added.png)
+
 &nbsp;
 &nbsp;
 
@@ -52,7 +54,8 @@ If pressed while the answer is being read out loud, the reading will stop.
 
 
 ## Features
-- ### Uses in-built browser APIs to hear the questions and read the answer out loud. `webkitSpeechRecognition` and `speechSynthesis` APIs namely.
+- ## You can now change the voice for the AI, pitch of the voice and the rate at which the words are spoken.
+- ### Uses in-built browser APIs to hear the questions and read the answer out loud. `SpeechRecognition` and `SpeechSynthesisUtterance` APIs namely.
 - ### Written in native Javascript, does not use any external libraries or APIs other than the ones already available in the browser.
 - ### Almost no UI, just press the keyboard shortcuts and you are ready to go.
 
@@ -94,7 +97,7 @@ Sometimes, due to site sound permission, you might not hear the voice automatica
 
 ![Step 2](/images/1.png)
 
-3. Go to the "Sound" setting and change it from "Automatic (default)" 
+3. Go to the "Sound" setting and change it from "Automatic (default)"
 
 ![Step 2](/images/2.png)
 
@@ -120,4 +123,3 @@ Please create issues with any feedback. Thanks!
 
 ## Author
 [Ejaz Bawasa](https://zaje.me/) <> [LinkedIn](https://www.linkedin.com/in/ejazbawasa/)
-

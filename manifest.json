@@ -19,7 +19,8 @@
         }
     ],
     "permissions": [
-        "tabs"
+        "tabs",
+        "storage"
     ],
     "action": {
         "default_title": "ChatGPT - Lets talk",

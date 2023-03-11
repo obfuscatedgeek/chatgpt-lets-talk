@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +8,7 @@
 </head>
 <title>Grid Example</title>
 <style type="text/css">
-    body,
-    div {
+    body {
         margin: 0;
         width: 800px;
         padding: 0;
@@ -23,19 +21,30 @@
 
     .header {
         background-color: aliceblue;
-        padding: 10px;
+        padding-bottom: 2px;
+        /* padding: 10px; */
     }
 
     .description {
         font-size: 14px;
-        padding: 0 0 2px 0;
-        /* padding-bottom: 1px; */
+        padding: 0 0 2px 10px;
     }
 
     h3 {
         font-size: 24px;
         padding: 0;
         margin: 0;
+    }
+
+    input {
+        font-size: 20px;
+        width: 70%;
+        padding: 8px;
+    }
+
+    h4 {
+        margin: 0;
+        padding-left: 15px;
     }
 
     .key {
@@ -63,7 +72,7 @@
     th,
     td {
         text-align: center;
-        padding: 10px 5px;
+        padding: 5px 0;
         border-bottom: 1px solid #DEDEDE;
         ;
     }
@@ -81,56 +90,184 @@
         border-bottom: 1px solid #333;
         font-size: 12px;
     }
+
+    .headerTitle {
+        padding: 8px 0 0 10px;
+    }
+
+    select {
+        width: 95%;
+        margin: 0 5px;
+        border-radius: 4px;
+    }
+    option {
+        font-size: 16px;
+        font-weight: 100;
+        padding: 8px 5px;
+    }
+
+    .voiceSection {
+        background-color: #f4fff0;
+        margin-bottom: 10px;
+    }
+
+    .voiceTable {
+        background-color: #f4fff0;
+    }
+
+    .voiceTable th {
+        background-color: lightgreen;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .tool {
+        cursor: help;
+        position: relative;
+    }
+
+    /*== comes from: https://codepen.io/pure-css/pen/bddggP ==*/
+    /*== common styles for both parts of tool tip ==*/
+    .tool::before,
+    .tool::after {
+        left: 50%;
+        opacity: 0;
+        position: absolute;
+        z-index: -100;
+    }
+
+    .tool:hover::before,
+    .tool:focus::before,
+    .tool:hover::after,
+    .tool:focus::after {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        z-index: 100;
+    }
+
+
+    /*== pointer tip ==*/
+    .tool::before {
+        border-style: solid;
+        border-width: 1em 0.75em 0 0.75em;
+        border-color: #3E474F transparent transparent transparent;
+        bottom: 100%;
+        content: "";
+        margin-left: -0.5em;
+        transition: all .65s cubic-bezier(.84,-0.18,.31,1.26), opacity .65s .5s;
+        transform:  scale(.6) translateY(-90%);
+    }
+
+    .tool:hover::before,
+    .tool:focus::before {
+        transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+    }
+
+
+    /*== speech bubble ==*/
+    .tool::after {
+        background: #3E474F;
+        border-radius: .25em;
+        bottom: 180%;
+        color: #EDEFF0;
+        content: attr(data-tip);
+        margin-left: -8.75em;
+        padding: 1em;
+        transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+        transform:  scale(.6) translateY(50%);
+        width: 17.5em;
+    }
+
+    .tool:hover::after,
+    .tool:focus::after  {
+        transition: all .65s cubic-bezier(.84,-0.18,.31,1.26);
+    }
+
+
+    @media (max-width: 800px) {
+        .tool::after {
+            font-size: .75em;
+            margin-left: -5em;
+            width: 10em;
+        }
+    }
 </style>
 </head>
 
 <body>
     <div class="header">
-        <h3>ChatGPT - Let's talk</h3>
-        <p class="description">Adds keyboard shortcuts to <a href="https://chat.openai.com/chat" target="_blank">ChatGPT
-                site</a> which allows you to talk to and hear AI speak in the site. </p><p class="description">Currently 3 actions are available, press
-            the following combination of keys to perform the respective action.</p>
+        <h3 class="headerTitle">ChatGPT - Let's talk</h3>
+        <p class="description">Adds keyboard shortcuts to <a href="https://chat.openai.com/chat" target="_blank">ChatGPT site</a> which allows you to talk to and hear AI speak in the site. </p>
+        <p class="description">You can now change the voice (language feature is totally experimental)</p>
+        <p class="description">Currently 3 actions are available, press the following combination of keys to perform the respective action.</p>
     </div>
+    <section class="voiceSection section">
+        <h4>Change voices: </h4>
+        <table width="100%" class="voiceTable">
+            <thead>
+                <tr>
+                    <th><span class="tool" data-tip="Set the voice that will be used to speak.">Voices (select a voice to hear it.)</span></th>
+                    <th><span class="tool" data-tip="Set the pitch of the voice.">Pitch</span></th>
+                    <th><span class="tool" data-tip="Set the speed at which the text will be spoken.">Rate</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>
+                    <select size="3" id="voices"></select>
+                </td>
+                <td>
+                    <input id="pitch" type="number" max="2" min="0.1", step="0.1" value="1">
+                </td>
+                <td>
+                    <input id="rate" type="number" max="10" min="0.1", step="0.1" value="1">
+                </td>
+            </tbody>
+        </table>
+    </section>
 
-    <table width="100%">
-        <thead>
-            <tr>
-                <th width="30%">Window</th>
-                <th width="30%">Mac</th>
-                <th width="40%">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span></td>
-                <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span>
-                </td>
-                <td><b>Talk : &nbsp;</b> The extension is ready & actively
-                    listening, ask your question using
-                    your voice / microphone.</td>
-            </tr>
-            <tr>
-                <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span></td>
-                <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span>
-                </td>
-                <td><b>Hear : &nbsp;</b>Although the extension will read the answer out loud once it's finished
-                    generating it, by pressing these keys, the last answer will be read again.</td>
-            </tr>
-            <tr>
-                <td><span class="key">Alt</span>+<span class="key">&#8679; Shift</span>+<span class="key">P</span></td>
-                <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">P</span>
-                </td>
-                <td><b>Stop : &nbsp;</b>If pressed while the answer is being read, the extension will stop reading.</td>
-            </tr>
-            <tr class="footer">
-                <td style="text-align: start;"><a target="_blank"
-                        href="https://github.com/obfuscatedgeek/chatgpt-lets-talk#cannot-hear-the-answer">ChatGPT -
-                        Let's talk - homepage</a></td>
-                <td></td>
-                <td style="text-align: end;"><a target="_blank" href="https://zaje.me/">Ejaz Bawasa</a></td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="infoSection section">
+        <h4>Keyboard shortcuts:</h4>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th width="30%">Window</th>
+                    <th width="30%">Mac</th>
+                    <th width="40%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span></td>
+                    <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span>
+                    </td>
+                    <td><b>Talk : &nbsp;</b> The extension is ready & actively
+                        listening, ask your question using
+                        your voice / microphone.</td>
+                </tr>
+                <tr>
+                    <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span></td>
+                    <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span>
+                    </td>
+                    <td><b>Hear : &nbsp;</b>Although the extension will read the answer out loud once it's finished
+                        generating it, by pressing these keys, the last answer will be read again.</td>
+                </tr>
+                <tr>
+                    <td><span class="key">Alt</span>+<span class="key">&#8679; Shift</span>+<span class="key">P</span></td>
+                    <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">P</span>
+                    </td>
+                    <td><b>Stop : &nbsp;</b>If pressed while the answer is being read, the extension will stop reading.</td>
+                </tr>
+                <tr class="footer">
+                    <td style="text-align: start;padding-left: 10px;"><a target="_blank"
+                            href="https://github.com/obfuscatedgeek/chatgpt-lets-talk#cannot-hear-the-answer">ChatGPT -
+                            Let's talk - homepage</a></td>
+                    <td></td>
+                    <td style="text-align: end;padding-right:10px"><a target="_blank" href="https://zaje.me/">Ejaz Bawasa</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 </body>
+<script type="text/javascript" src="popup.js"></script>
 
 </html>
