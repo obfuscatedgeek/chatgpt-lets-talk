@@ -1,6 +1,6 @@
 {
     "name": "ChatGPT - Lets talk",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "description": "Add voice to ChatGPT",
     "manifest_version": 3,
     "background": {
@@ -22,6 +22,13 @@
         "tabs",
         "storage"
     ],
+    "icons": {
+        "16": "/assets/icon-16x16.png",
+        "24": "/assets/icon-32x32.png",
+        "32": "/assets/icon-32x32.png",
+        "48": "/assets/icon-48x48.png",
+        "128": "/assets/icon-128x128.png"
+    },
     "action": {
         "default_title": "ChatGPT - Lets talk",
         "default_popup": "popup.html",

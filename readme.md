@@ -114,7 +114,7 @@ The first time pressing the keyboard shortcut `Alt + Shift + F` on Windows and `
 
 ## Roadmap
 
-- Ability to select/change voice.
+- ~~Ability to select/change voice.~~
 - Improve sound permission, sometimes sound permission prevents the voice from being heard.
 - Improve error handling and figure out edge cases.
 
