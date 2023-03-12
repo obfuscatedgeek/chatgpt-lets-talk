@@ -80,7 +80,7 @@ window.onload = () => {
 		utterThis.onerror = event =>{
 			shouldTalk = false;
 
-			console.log("SpeechSynthesisUtterance onpause");
+			console.log("SpeechSynthesisUtterance onerror", event);
 		};
 
 		getVoices().then(vozs => {
@@ -123,7 +123,7 @@ const speak = () => {
 		return;
 	}
 
-	// the speaking stops after few seconds in chrome due to a bug. Temporary fix until chrome fixes it
+	// the speaking stops after few seconds in chrome due to a bug. Temporary hack until chrome fixes it
 	const speakingInterval = setInterval(() => {
 		if (!synth.speaking) {
 			clearInterval(speakingInterval);
