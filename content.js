@@ -67,17 +67,20 @@ window.onload = () => {
 
 		utterThis = new SpeechSynthesisUtterance();
 
+		// eslint-disable-next-line no-unused-vars
 		utterThis.onend = event => {
 			shouldTalk = false;
 			utterThis.text = "";
 			synth.cancel();
 
-			console.log("SpeechSynthesisUtterance onend", event);
+			console.log("SpeechSynthesisUtterance onend");
 		};
 
+		// eslint-disable-next-line no-unused-vars
 		utterThis.onerror = event =>{
 			shouldTalk = false;
-			console.log("SpeechSynthesisUtterance onpause", event);
+
+			console.log("SpeechSynthesisUtterance onpause");
 		};
 
 		getVoices().then(vozs => {
