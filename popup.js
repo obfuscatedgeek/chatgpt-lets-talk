@@ -42,12 +42,15 @@ const sendMssageToContent = async (msg) => {
 	const [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
 	const response = await chrome.tabs.sendMessage(tab.id, JSON.stringify(msg));
 
-	console.log(">>> RESPONSE FROM CONTENT", response);
 	return response;
 };
 
 const getVoicesFromStorage = async () => {
 	let response = await sendMssageToContent({command: "get stored voice"});
+
+	if (typeof response === "string" || response instanceof String) {
+		response = JSON.parse(response);
+	}
 
 	select.value = response.voice;
 	pitchInput.value = response.pitch;

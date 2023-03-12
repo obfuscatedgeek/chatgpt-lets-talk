@@ -184,6 +184,10 @@ const storeVoicesInLocalStorage = async (settings) => {
 };
 
 const updateAppVoiceConfig = settings => {
+	if (typeof settings === "string" || settings instanceof String) {
+		settings = JSON.parse(settings);
+	}
+
 	pitch = settings.pitch;
 	voice = settings.voice;
 	rate = settings.rate;
