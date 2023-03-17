@@ -106,6 +106,8 @@ Sometimes, due to site sound permission, you might not hear the voice automatica
 
 ![Step 3](/images/3.png)
 
+5. Reload the ChatGPT site and it should work now :)
+
 ### Microphone access
 
 The first time pressing the keyboard shortcut `Alt + Shift + F` on Windows and `Option + Shift + F` on OSX, Chrome will show a pop-up asking for microphone access. Click "Allow" to use it.
