@@ -11,7 +11,7 @@ Available on the web store at: https://chrome.google.com/webstore/detail/chatgpt
 &nbsp;
 &nbsp;
 
-![ChatGPT - Let's talk](./images/popup-screenshot-voice-wth-flags-faq.png)
+![ChatGPT - Let's talk](./images/popup-screenshot-voice-wth-flags-faq-minimal.png)
 
 ## Ask questions using your microphone
 To voice chat and ask ChatGPT questions using your microphone, press the following combination of keys simultaneously:
@@ -69,6 +69,7 @@ Chrome web store approved, the extension can be downloaded from: https://chrome.
 To manually install the extension from here follow these steps:
 
 1. Clone the repo or download the zip and unzip the files.
+![Step 1](/images/install-0.png)
 
 2. Go to the "Chrome extensions" tab
 
@@ -80,7 +81,7 @@ To manually install the extension from here follow these steps:
 
 ![Step 3](/images/install-4.png)
 
-4. Click on "Load unpacked" and select the folder. Enjoy!
+4. Click on "Load unpacked" and select the folder where you cloned the repo or if you downloaded the zip - select the unzipped folder. Enjoy!
 
 ![Step 4](/images/install-5.png)
 
