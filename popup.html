@@ -106,9 +106,9 @@
         border-radius: 4px;
     }
     option {
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 100;
-        padding: 7px 5px;
+        padding: 8px 5px;
     }
 
     option span {
@@ -223,6 +223,18 @@
         display: flex;
     }
 
+    .sectionHeader  {
+        padding: 10px 0 5px;
+    }
+
+    .sectionHeader h4 {
+        display: inline-block;
+    }
+
+    .sectionHeader span {
+        font-size: 14px;
+    }
+
 </style>
 </head>
 
@@ -230,11 +242,12 @@
     <div class="header">
         <h3 class="headerTitle">ChatGPT - Let's talk</h3>
         <p class="description">Adds keyboard shortcuts to <a href="https://chat.openai.com/chat" target="_blank">ChatGPT site</a> which allows you to talk to and hear AI speak in the site. </p>
-        <p class="description">You can now change the voice (language feature is totally experimental)</p>
-        <p class="description">Currently 3 actions are available, press the combination of keys mentioned below to perform the respective action.</p>
     </div>
     <section class="voiceSection section">
-        <h4>Change voices: </h4>
+
+        <div class="sectionHeader">
+            <h4>Change voices: </h4>
+        </div>
         <table width="100%" class="voiceTable">
             <thead>
                 <tr>
@@ -258,7 +271,10 @@
     </section>
 
     <section class="infoSection section">
-        <h4>Keyboard shortcuts:</h4>
+        <div class="sectionHeader">
+            <h4>Keyboard shortcuts:</h4>
+            <span>(press the combination of keys mentioned below to perform the respective action)</span>
+        </div>
         <table width="100%" class="info-table">
             <thead>
                 <tr>

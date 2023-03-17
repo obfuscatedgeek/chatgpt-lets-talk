@@ -30,10 +30,13 @@ const select = document.getElementById("voices");
 const pitchInput = document.getElementById("pitch");
 const rateInput = document.getElementById("rate");
 
-const getFlagEmoji = (countryCode) => {
-	const codePoints = countryCode
-		.toUpperCase().split("").map(char =>  127397 + char.charCodeAt());
-	return String.fromCodePoint(...codePoints);
+const getFlagEmoji = (countryCode = "") => {
+	try {
+		const codePoints = countryCode.toUpperCase().split("").map(char =>  127397 + char.charCodeAt());
+		return String.fromCodePoint(...codePoints);
+	} catch (e) {
+		return "";
+	}
 };
 
 
