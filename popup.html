@@ -27,7 +27,7 @@
 
     .description {
         font-size: 14px;
-        padding: 0 0 2px 10px;
+        padding: 0 0 1px 10px;
     }
 
     h3 {
@@ -86,9 +86,14 @@
     }
 
     .footer {
-        background-color: aliceblue;
-        border-bottom: 1px solid #333;
+        /* background-color: aliceblue; */
+        background-color:   #eaecee;
         font-size: 12px;
+    }
+
+    .footer td {
+        border-bottom: none !important;
+        padding: 1px auto;
     }
 
     .headerTitle {
@@ -101,14 +106,17 @@
         border-radius: 4px;
     }
     option {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 100;
-        padding: 8px 5px;
+        padding: 7px 5px;
+    }
+
+    option span {
+        font-size: 12px;
     }
 
     .voiceSection {
         background-color: #f4fff0;
-        margin-bottom: 10px;
     }
 
     .voiceTable {
@@ -191,6 +199,30 @@
             width: 10em;
         }
     }
+
+    .action-desc {
+        text-align: left;
+        padding: 5px 12px;
+        background-color: #e9f2ff;
+    }
+
+    .action-desc b {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .info-table  {
+        border-collapse: collapse;
+    }
+    .info-table  td {
+        border-collapse: collapse;
+        border-bottom: 1px solid #bdd0ef;
+    }
+
+    .headerDiv {
+        display: flex;
+    }
+
 </style>
 </head>
 
@@ -199,14 +231,14 @@
         <h3 class="headerTitle">ChatGPT - Let's talk</h3>
         <p class="description">Adds keyboard shortcuts to <a href="https://chat.openai.com/chat" target="_blank">ChatGPT site</a> which allows you to talk to and hear AI speak in the site. </p>
         <p class="description">You can now change the voice (language feature is totally experimental)</p>
-        <p class="description">Currently 3 actions are available, press the following combination of keys to perform the respective action.</p>
+        <p class="description">Currently 3 actions are available, press the combination of keys mentioned below to perform the respective action.</p>
     </div>
     <section class="voiceSection section">
         <h4>Change voices: </h4>
         <table width="100%" class="voiceTable">
             <thead>
                 <tr>
-                    <th><span class="tool" data-tip="Set the voice that will be used to speak.">Voices (select a voice to hear it)</span></th>
+                    <th><span class="tool" data-tip="Set the voice that will be used to speak.">Voices : language (select a voice to hear it)</span></th>
                     <th><span class="tool" data-tip="Set the pitch of the voice.">Pitch</span></th>
                     <th><span class="tool" data-tip="Set the speed at which the text will be spoken.">Rate</span></th>
                 </tr>
@@ -227,41 +259,46 @@
 
     <section class="infoSection section">
         <h4>Keyboard shortcuts:</h4>
-        <table width="100%">
+        <table width="100%" class="info-table">
             <thead>
                 <tr>
-                    <th width="30%">Window</th>
-                    <th width="30%">Mac</th>
                     <th width="40%">Action</th>
+                    <th width="30%">Windows</th>
+                    <th width="30%">macOS</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td class="action-desc"><b>Talk : &nbsp;</b> The extension is ready & actively
+                        listening, ask your question using
+                        your voice / microphone.</td>
                     <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span></td>
                     <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span>
                     </td>
-                    <td><b>Talk : &nbsp;</b> The extension is ready & actively
-                        listening, ask your question using
-                        your voice / microphone.</td>
+
                 </tr>
                 <tr>
+                    <td class="action-desc"><b>Hear : &nbsp;</b>Although the extension will read the answer out loud once it's finished
+                        generating it, by pressing these keys, the last answer will be read again.</td>
                     <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span></td>
                     <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span>
                     </td>
-                    <td><b>Hear : &nbsp;</b>Although the extension will read the answer out loud once it's finished
-                        generating it, by pressing these keys, the last answer will be read again.</td>
+
                 </tr>
                 <tr>
+                    <td class="action-desc"><b>Stop : &nbsp;</b>If pressed while the answer is being read, the extension will stop reading.</td>
                     <td><span class="key">Alt</span>+<span class="key">&#8679; Shift</span>+<span class="key">P</span></td>
                     <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">P</span>
                     </td>
-                    <td><b>Stop : &nbsp;</b>If pressed while the answer is being read, the extension will stop reading.</td>
+
                 </tr>
                 <tr class="footer">
                     <td style="text-align: start;padding-left: 10px;"><a target="_blank"
                             href="https://github.com/obfuscatedgeek/chatgpt-lets-talk#cannot-hear-the-answer">ChatGPT -
                             Let's talk - homepage</a></td>
-                    <td></td>
+                    <td>
+                        <b>&#128172; FAQ: </b><a href="https://github.com/obfuscatedgeek/chatgpt-lets-talk#cannot-hear-the-answer" target="_blank">Cannot hear the voice / answer</a>
+                    </td>
                     <td style="text-align: end;padding-right:10px"><a target="_blank" href="https://zaje.me/">Ejaz Bawasa</a></td>
                 </tr>
             </tbody>

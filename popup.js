@@ -30,9 +30,17 @@ const select = document.getElementById("voices");
 const pitchInput = document.getElementById("pitch");
 const rateInput = document.getElementById("rate");
 
+const getFlagEmoji = (countryCode) => {
+	const codePoints = countryCode
+		.toUpperCase().split("").map(char =>  127397 + char.charCodeAt());
+	return String.fromCodePoint(...codePoints);
+};
+
+
 getVoices().then(voices => {
 	voices.forEach((voice, index) => {
-		select.add(new Option(`${voice.name}`, index));
+		const [language, countryCode] = voice.lang.split("-");
+		select.add(new Option(`${getFlagEmoji(countryCode)} ${voice.name}: ${language}`, index));
 	});
 
 	getVoicesFromStorage();
@@ -66,7 +74,7 @@ const voiceChangeHandler = e => {
 	sendMssageToContent(message);
 };
 
-const voiceChangeDebounced = debounce(voiceChangeHandler, 1000);
+const voiceChangeDebounced = debounce(voiceChangeHandler, 700);
 
 select.addEventListener("change", voiceChangeDebounced);
 pitchInput.addEventListener("change", voiceChangeDebounced);
