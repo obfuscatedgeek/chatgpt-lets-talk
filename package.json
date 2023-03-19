@@ -12,7 +12,7 @@
     "eslint": "^8.35.0"
   },
   "scripts": {
-    "pack": "rm -f build.zip && zip -r build.zip . -x '*.git*' -x '.DS_Store' -x */node_modules/* -x '.DS_Store'",
+    "pack": "rm -f build.zip && zip -r build.zip . -x '*.git*' -x '.DS_Store' -x /node_modules/* -x '.DS_Store' -x /images/* -x /marketing/* -x 'package-lock.json' -x 'package.json' -x 'readme.md' -x 'LICENSE' -x '.editorconfig' -x '.eslintrc.json'",
     "lint": "eslint ./*.js"
   }
 }
