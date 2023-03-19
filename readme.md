@@ -11,7 +11,7 @@ Available on the web store at: https://chrome.google.com/webstore/detail/chatgpt
 &nbsp;
 &nbsp;
 
-![ChatGPT - Let's talk](./images/popup-screenshot-voice-wth-flags-faq-minimal.png)
+![ChatGPT - Let's talk](./images/popup-final-minimal.png)
 
 ## Ask questions using your microphone
 To voice chat and ask ChatGPT questions using your microphone, press the following combination of keys simultaneously:
@@ -123,6 +123,8 @@ The first time pressing the keyboard shortcut `Alt + Shift + F` on Windows and `
 
 ## Feedback
 Please create issues with any feedback. Thanks!
+
+<a href="https://www.buymeacoffee.com/yalite" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 ## Author
 [Ejaz Bawasa](https://zaje.me/) <> [LinkedIn](https://www.linkedin.com/in/ejazbawasa/)

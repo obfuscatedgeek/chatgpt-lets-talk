@@ -27,7 +27,8 @@
 
     .description {
         font-size: 14px;
-        padding: 0 0 1px 10px;
+        padding: 8px 0 8px 10px;
+        margin: 0;
     }
 
     h3 {
@@ -207,7 +208,7 @@
     }
 
     .action-desc b {
-        font-size: 16px;
+        font-size: 17px;
         font-weight: 700;
     }
 
@@ -233,6 +234,17 @@
 
     .sectionHeader span {
         font-size: 14px;
+    }
+    .blinking-dot {
+        color: red;
+        font-size: 18px;
+        animation: blinker 2s linear infinite;
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
     }
 
 </style>
@@ -285,24 +297,21 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="action-desc"><b>Talk : &nbsp;</b> The extension is ready & actively
-                        listening, ask your question using
-                        your voice / microphone.</td>
+                    <td class="action-desc"><b>Talk : &nbsp;</b>Activates listening, press the combination of keys and just ask your question. Check the tab title, you should see <span class="blinking-dot">&#10687;</span> indicating the microphone is in use.</td>
                     <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span></td>
                     <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">F</span>
                     </td>
 
                 </tr>
                 <tr>
-                    <td class="action-desc"><b>Hear : &nbsp;</b>Although the extension will read the answer out loud once it's finished
-                        generating it, by pressing these keys, the last answer will be read again.</td>
+                    <td class="action-desc"><b>Hear : &nbsp;</b>The extension reads the answer once ChatGPT has finished generating it. Press this combination of keys to hear the last answer being read again.</td>
                     <td><span class="key">Alt</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span></td>
                     <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">J</span>
                     </td>
 
                 </tr>
                 <tr>
-                    <td class="action-desc"><b>Stop : &nbsp;</b>If pressed while the answer is being read, the extension will stop reading.</td>
+                    <td class="action-desc"><b>Stop : &nbsp;</b>To be pressed while the answer is being read, the extension will stop reading.</td>
                     <td><span class="key">Alt</span>+<span class="key">&#8679; Shift</span>+<span class="key">P</span></td>
                     <td><span class="key">&#8997; Option</span>+<span class="key">&#8679;Shift</span>+<span class="key">P</span>
                     </td>
