@@ -9,14 +9,13 @@ let shouldTalk = false;
 // observation block: check the disabled state of the submit button to decide when to start speaking after the answer has been generated
 const observer = new MutationObserver(mutations => {
 	mutations.forEach(mutation => {
-		if (mutation.attributeName === "disabled") {
-			if(!mutation.target.disabled) {
+		if(mutation.attributeName === "class") {
+			if(!mutation.target.className.includes("result-streaming")) {
 				speak();
 			}
 		}
 	});
 });
-observer.observe(submitButton, {attributes: true});
 
 // speech recognition block - listening
 let recognizing;
@@ -26,6 +25,7 @@ recognization.continuous = true;
 recognization.onresult = (event) => {
 	for (let i = event.resultIndex; i < event.results.length; i++) {
 		if (event.results[i].isFinal) {
+			submitButton.disabled = false;
 			const transcript = event.results[i][0].transcript;
 			textarea.innerText = transcript;
 			textarea.value = transcript;
@@ -34,6 +34,15 @@ recognization.onresult = (event) => {
 			toggleListening();
 
 			submitButton.click();
+
+			setTimeout(() => {
+				// observe the latest markdown text where the answer is printed
+				const md = Array.from(document.querySelectorAll(".markdown")).pop();
+				observer.observe(md, {
+					attributes : true,
+					attributeFilter : ["class"]
+				});
+			}, 200);
 		}
 	}
 };
@@ -72,15 +81,11 @@ window.onload = () => {
 			shouldTalk = false;
 			utterThis.text = "";
 			synth.cancel();
-
-			console.log("SpeechSynthesisUtterance onend");
 		};
 
 		// eslint-disable-next-line no-unused-vars
 		utterThis.onerror = event =>{
 			shouldTalk = false;
-
-			console.log("SpeechSynthesisUtterance onerror", event);
 		};
 
 		getVoices().then(vozs => {
@@ -140,6 +145,8 @@ const speak = () => {
 
 	synth.cancel();
 	synth.speak(utterThis);
+
+	observer.disconnect();
 };
 
 const updateUtteranceConfigs = () => {
